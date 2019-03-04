@@ -1,0 +1,18 @@
+version: '2'
+services:
+  php:
+    image: php:7.1.19-cli-alpine
+    volumes:
+      - ${PROJECTS_PATH}:/app
+      - ./:/Development
+    working_dir: /app
+
+  composer:
+    image: composer:latest
+    volumes_from:
+      - php
+    working_dir: /app
+    depends_on:
+      - php
+    command: 'alias lcomposer="/Development/local-composer.sh"'
+    command: 'alias gcomposer="/Development/global-composer.sh"'
