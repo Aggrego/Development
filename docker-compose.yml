@@ -14,6 +14,5 @@ services:
     working_dir: ${WORKING_DIR}
     depends_on:
       - php
-#    command: 'alias lcomposer="/Development/local-composer.sh"'
     environment:
-      - WORKING_DIR=${WORKING_DIR}
+      - CONFIG_STORAGE=${CONFIG_STORAGE}
