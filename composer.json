@@ -1,6 +1,8 @@
 {
-  "minimum-stability": "dev",
   "require-dev": {
-    "symfony/flex": "1.1.*"
+    "wikimedia/composer-merge-plugin": "1.4.*",
+    "phpspec/phpspec": "^5.0",
+    "squizlabs/php_codesniffer": "3.*",
+    "phpstan/phpstan": "^0.10"
   }
 }

@@ -1,2 +1,5 @@
 repositories.json
-composer.local.json
+composer.json
+composer.lock
+/vendor/
+/composer-configs/

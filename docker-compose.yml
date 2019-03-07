@@ -1,18 +1,19 @@
 version: '2'
 services:
   php:
-    image: php:7.1.19-cli-alpine
+    image: ${PHP_IMG}
     volumes:
-      - ${PROJECTS_PATH}:/app
+      - ${PROJECTS_PATH}:${WORKING_DIR}
       - ./:/Development
-    working_dir: /app
+    working_dir: ${WORKING_DIR}
 
   composer:
-    image: composer:latest
+    image: ${COMPOSER_IMG}
     volumes_from:
       - php
-    working_dir: /app
+    working_dir: ${WORKING_DIR}
     depends_on:
       - php
-    command: 'alias lcomposer="/Development/local-composer.sh"'
-    command: 'alias gcomposer="/Development/global-composer.sh"'
+#    command: 'alias lcomposer="/Development/local-composer.sh"'
+    environment:
+      - WORKING_DIR=${WORKING_DIR}
