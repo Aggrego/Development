@@ -1,0 +1,5 @@
+{
+  "repositories": [
+    { "type": "path", "url": "/app/EventConsumer", "options": {"symlink": true}}
+  ]
+}
